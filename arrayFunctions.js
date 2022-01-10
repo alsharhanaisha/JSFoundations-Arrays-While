@@ -8,9 +8,16 @@
  * isArrayLengthOdd([1, 2, 3]) -> true
  * isArrayLengthOdd([1, 2, 3, 4]) -> flase
  */
+
 function isArrayLengthOdd(numbers) {
   // Your code here
+  if (numbers.length % 2 === 1) {
+    return true;
+  } else {
+    return false;
+  }
 }
+console.log(isArrayLengthOdd([1, 2, 3, 4]));
 
 /**
  * isArrayLengthEven(numbers):
@@ -24,7 +31,13 @@ function isArrayLengthOdd(numbers) {
  */
 function isArrayLengthEven(numbers) {
   // Your code here
+  if (numbers.length % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
+console.log(isArrayLengthEven([1, 2, 3, 4]));
 
 /**
  * addLailaToArray(instructors):
@@ -36,8 +49,10 @@ function isArrayLengthEven(numbers) {
  */
 function addLailaToArray(instructors) {
   // Your code here
+  instructors.push("LAILA");
+  return instructors;
 }
-
+console.log(addLailaToArray(["MSHARY", "HASAN"]));
 /**
  * eliminateTeam(teams):
  * - receives array `teams`
@@ -48,8 +63,10 @@ function addLailaToArray(instructors) {
  */
 function eliminateTeam(teams) {
   // Your code here
+  return teams.splice(teams.length - 1, 1);
+  // return teams.pop();
 }
-
+console.log(eliminateTeam(["Brazil", "Germany", "Italy"]));
 /**
  * secondHalfOfArrayIfItIsEven(fruits):
  * - receives array `fruits`
@@ -62,8 +79,22 @@ function eliminateTeam(teams) {
  */
 function secondHalfOfArrayIfItIsEven(fruits) {
   // Your code here
+  if (fruits.length % 2 === 0) {
+    return fruits.slice(fruits.length / 2);
+  } else {
+    return (fruits = []);
+  }
 }
-
+console.log(secondHalfOfArrayIfItIsEven(["apple", "orange", "banana", "kiwi"]));
+console.log(
+  secondHalfOfArrayIfItIsEven([
+    "apple",
+    "orange",
+    "banana",
+    "kiwi",
+    "blueberry",
+  ])
+);
 /**
  * youGottaCalmDown(shout):
  * - receives a string `shout`
@@ -80,7 +111,9 @@ function secondHalfOfArrayIfItIsEven(fruits) {
  */
 function youGottaCalmDown(shout) {
   // Your code here
+  return shout.slice(0, shout.indexOf("!") + 1);
 }
+console.log(youGottaCalmDown("AISHA!!!!!!"));
 
 module.exports = {
   isArrayLengthOdd,
